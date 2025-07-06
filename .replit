@@ -2,3 +2,18 @@ modules = ["python-3.12", "web", "nodejs-20"]
 
 [nix]
 channel = "stable-24_05"
+
+[workflows]
+runButton = "Run Django"
+
+[[workflows.workflow]]
+name = "Run Django"
+author = 41028344
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd main && python manage.py runserver 0.0.0.0:5000"
+
+[deployment]
+run = ["sh", "-c", "cd main && python manage.py collectstatic --noinput && python manage.py migrate && gunicorn --bind 0.0.0.0:5000 main.wsgi:application"]
