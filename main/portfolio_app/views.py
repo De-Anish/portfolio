@@ -39,17 +39,23 @@ def contact(request):
             
             try:
                 # Send email
-                send_mail(
+                result = send_mail(
                     email_subject,
                     email_message,
                     settings.DEFAULT_FROM_EMAIL,  # From email
                     [settings.EMAIL_HOST_USER],   # To email (your email)
                     fail_silently=False,
                 )
-                messages.success(request, 'Your message has been sent successfully! I will get back to you soon.')
-                return redirect('contact')
+                
+                if result == 1:  # send_mail returns 1 on success
+                    messages.success(request, 'Your message has been sent successfully! I will get back to you soon.')
+                    return redirect('contact')
+                else:
+                    messages.error(request, 'Failed to send email. Please try again later.')
+                    
             except Exception as e:
-                messages.error(request, f'Sorry, there was an error sending your message. Please try again later. Error: {str(e)}')
+                print(f"Email sending error: {str(e)}")  # Debug logging
+                messages.error(request, f'Sorry, there was an error sending your message. Error: {str(e)}')
     else:
         form = ContactForm()
     
