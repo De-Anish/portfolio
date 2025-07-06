@@ -17,3 +17,7 @@ args = "cd main && python manage.py runserver 0.0.0.0:5000"
 
 [deployment]
 run = ["sh", "-c", "cd main && python manage.py collectstatic --noinput && python manage.py migrate && gunicorn --bind 0.0.0.0:5000 main.wsgi:application"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80
