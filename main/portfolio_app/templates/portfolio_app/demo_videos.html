@@ -1,0 +1,256 @@
+{% extends 'portfolio_app/base.html' %}
+
+{% block content %}
+<div class="dark-portfolio-container">
+    <div class="portfolio-content">
+        <h1>My<span>Portfolio</span></h1>
+        <p class="subtitle">Click to watch my work in action</p>
+        
+        <div class="video-grid">
+            <!-- Project 1 -->
+            <div class="video-card">
+                <div class="video-preview" onclick="window.open('https://youtu.be/demo1', '_blank')">
+                    <img src="https://img.youtube.com/vi/demo1/maxresdefault.jpg" alt="E-Commerce Platform" class="video-thumbnail">
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>E-Commerce Platform</h3>
+                    <div class="tech-stack">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                    <p>Full-featured online store with payment integration</p>
+                    <a href="https://youtu.be/demo1" target="_blank" class="demo-link">
+                        Watch Demo <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="video-card">
+                <div class="video-preview" onclick="window.open('https://youtu.be/demo2', '_blank')">
+                    <img src="https://img.youtube.com/vi/demo2/maxresdefault.jpg" alt="Task Management App" class="video-thumbnail">
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Task Management App</h3>
+                    <div class="tech-stack">
+                        <span>Vue.js</span>
+                        <span>Firebase</span>
+                        <span>GraphQL</span>
+                    </div>
+                    <p>Collaborative project management solution</p>
+                    <a href="https://youtu.be/demo2" target="_blank" class="demo-link">
+                        Watch Demo <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Reset and base styles */
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+        background-color: #121212;
+    }
+    
+    /* Full-width dark container */
+    .dark-portfolio-container {
+        background-color: #121212;
+        min-height: 100vh;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding: 60px 0;
+    }
+    
+    /* Content container */
+    .portfolio-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        color: #e0e0e0;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    /* Header styles */
+    h1 {
+        font-size: 2.8rem;
+        text-align: center;
+        margin-bottom: 15px;
+        background: linear-gradient(90deg, #fff, #7c4dff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    
+    h1 span {
+        color: #7c4dff;
+    }
+    
+    .subtitle {
+        text-align: center;
+        color: #aaa;
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+    }
+    
+    /* Video grid layout */
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+    }
+    
+    /* Video card styling */
+    .video-card {
+        background: #1e1e1e;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    
+    .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(124, 77, 255, 0.2);
+    }
+    
+    /* Video preview section */
+    .video-preview {
+        position: relative;
+        cursor: pointer;
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .video-thumbnail {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+    
+    .video-preview:hover .video-thumbnail {
+        transform: scale(1.05);
+    }
+    
+    .play-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    
+    .video-preview:hover .play-overlay {
+        opacity: 1;
+    }
+    
+    .play-button {
+        width: 60px;
+        height: 60px;
+        background: rgba(124, 77, 255, 0.9);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 20px;
+    }
+    
+    /* Video info section */
+    .video-info {
+        padding: 20px;
+    }
+    
+    .video-info h3 {
+        color: #fff;
+        margin: 0 0 10px 0;
+        font-size: 1.4rem;
+    }
+    
+    .tech-stack {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+    }
+    
+    .tech-stack span {
+        background: rgba(124, 77, 255, 0.2);
+        color: #bb86fc;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+    
+    .video-info p {
+        color: #b0b0b0;
+        margin: 0 0 15px 0;
+        line-height: 1.5;
+    }
+    
+    .demo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #7c4dff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+    
+    .demo-link:hover {
+        color: #9561fd;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .dark-portfolio-container {
+            padding: 40px 0;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+        }
+        
+        .video-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .video-preview {
+            height: 180px;
+        }
+    }
+</style>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- Inter font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+{% endblock %}

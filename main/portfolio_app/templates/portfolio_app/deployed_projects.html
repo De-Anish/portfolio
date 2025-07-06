@@ -1,0 +1,138 @@
+{% extends 'portfolio_app/base.html' %}
+
+{% block content %}
+<div class="dark-theme-wrapper">
+    <div class="dark-theme-content">
+        <h2 class="header">Deployed Projects</h2>
+        <div class="projects-container">
+            <ul class="projects-list">
+                <li class="project-item">
+                    <a href="https://yourproject1.com" target="_blank" class="project-link">
+                        <span class="project-name">Project 1</span>
+                        <span class="project-arrow">→</span>
+                    </a>
+                </li>
+                <li class="project-item">
+                    <a href="https://yourproject2.com" target="_blank" class="project-link">
+                        <span class="project-name">Project 2</span>
+                        <span class="project-arrow">→</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Full page dark theme */
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    /* Wrapper to ensure full coverage */
+    .dark-theme-wrapper {
+        background-color: #121212;
+        min-height: 100vh;
+    }
+    
+    /* Content container with padding */
+    .dark-theme-content {
+        padding: 2rem;
+        padding-top: 80px; /* Adjust based on your navbar height */
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Navbar coordination - assuming your navbar has class 'navbar' */
+    .navbar {
+        background-color: #000000 !important;
+        border-bottom: 1px solid #333;
+    }
+    
+    .header {
+        color: #bb86fc;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        text-align: center;
+        border-bottom: 2px solid #bb86fc;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+    }
+    
+    .projects-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .projects-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .project-item {
+        margin-bottom: 1.5rem;
+        background-color: #1e1e1e;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #333;
+    }
+    
+    .project-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .project-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .project-name {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    
+    .project-arrow {
+        color: #bb86fc;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .project-link:hover .project-arrow {
+        transform: translateX(5px);
+    }
+    
+    /* Footer coordination */
+    footer {
+        background-color: #000000;
+        color: #888;
+        padding: 1rem;
+        text-align: center;
+        border-top: 1px solid #333;
+    }
+    
+    @media (max-width: 600px) {
+        .dark-theme-content {
+            padding: 1rem;
+            padding-top: 70px; /* Adjust for mobile navbar height */
+        }
+        
+        .header {
+            font-size: 2rem;
+        }
+        
+        .project-link {
+            padding: 1rem;
+        }
+    }
+</style>
+{% endblock %}
