@@ -260,8 +260,8 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📞 Contact
 
 - **Email**: anishde0950@gmail.com
-- **Portfolio**: [Your Portfolio URL]
-- **GitHub**: [Your GitHub Profile]
+- **Portfolio**: https://ca350bbc-e817-485e-b205-b76de3deb04b-00-27s5ea17jnkij.sisko.replit.dev/
+
 
 ## 🎯 Future Enhancements
 
