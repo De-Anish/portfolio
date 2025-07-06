@@ -35,6 +35,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# CSRF Settings
+CSRF_TRUSTED_ORIGINS = ['https://*.replit.dev', 'https://*.replit.app']
+
 ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [
